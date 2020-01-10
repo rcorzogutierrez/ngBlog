@@ -1,4 +1,5 @@
-<div class="container">
+<div class="container" *ngIf="posts$ | async as posts; else loading">
+    {{posts | json}}
     <mat-card class="post-card" *ngFor="let post of posts">
         <mat-card-header>
             <mat-card-title><a [routerLink]="['/post', post.id]">{{post.titlePost}}</a></mat-card-title>
@@ -10,9 +11,17 @@
                {{post.contentPost}}
            </p>
         </mat-card-content>
-        <mat-card-actions align="start" class="post-button">
-            <button mat-button (click)="(onAction1)">Action 1</button>
+        <mat-divider></mat-divider>
+        <mat-card-actions >
+            <mat-chip-list>
+                <mat-chip *ngFor="let tag of post.tagPost" [ngClass]="tag">{{ tag }}</mat-chip>
+            </mat-chip-list>
         </mat-card-actions>
-        <mat-card-footer>Footer</mat-card-footer>
+        <mat-card-footer>footer</mat-card-footer>
     </mat-card>
 </div>
+<ng-template #loading>
+    <div class="container-spinner">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>
