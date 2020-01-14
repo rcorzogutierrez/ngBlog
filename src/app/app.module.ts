@@ -18,13 +18,15 @@ import { AngularFireStorageModule,StorageBucket } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule} from '@angular/fire/auth';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewPostComponent,
     PostComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ContainerAppComponent
   ],
   imports: [
     BrowserModule,
