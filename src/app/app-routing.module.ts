@@ -10,7 +10,8 @@ const routes: Routes = [
    import('./components/pages/home/home.module').then(m => m.HomeModule) },
   { path: 'post/:id', component:PostComponent },
   { path: 'about', loadChildren: () => import('./components/pages/about/about.module').then(m => m.AboutModule) },
-  { path: 'admin', loadChildren: () => import('./components/admin/admin.module').then(m => m.AdminModule) }
+  { path: 'admin', loadChildren: () => import('./components/admin/admin.module').then(m => m.AdminModule) },
+  { path: 'login', loadChildren: () => import('./components/auth/login/login.module').then(m => m.LoginModule) }
 ];
 
 @NgModule({

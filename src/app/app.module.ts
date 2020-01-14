@@ -12,9 +12,12 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
 
 import { environment } from '../environments/environment';
 
+
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule,StorageBucket } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule} from '@angular/fire/auth';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,10 +31,12 @@ import { AngularFireModule } from '@angular/fire';
     BrowserAnimationsModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AppRoutingModule,
     NewPostModule,    
     MaterialModule,
+    ReactiveFormsModule,
     
   ],
   providers: [
