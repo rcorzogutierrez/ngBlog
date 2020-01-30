@@ -7,9 +7,10 @@ import {PostService} from '../post.service';
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',
-  styleUrls: ['./new-post.component.sass']
+  styleUrls: ['./new-post.component.scss']
 })
 export class NewPostComponent implements OnInit {
+  private image: any;
 
   constructor(private postSvc: PostService) { }
 
@@ -24,6 +25,12 @@ export class NewPostComponent implements OnInit {
 
   addNewPost(data: PostI){
     console.log('New Post', data);
+    this.postSvc.uploadImage(data, this.image);
+  }
+
+  handleImage(event:any):void{
+    this.image = event.target.files[0];
+    console.log('Image', this.image);
   }
 
 }
